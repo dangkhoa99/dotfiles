@@ -1,0 +1,18 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[✗](bold red)"
+
+[package]
+disabled = true
+
+[git_branch]
+symbol = " "
+
+[nodejs]
+symbol = " "
+style = "fg:#6cc24a"
+format = "via [$symbol($version )]($style)"

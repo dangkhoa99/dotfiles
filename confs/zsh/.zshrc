@@ -65,6 +65,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+source ~/.zsh_alias
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -121,3 +123,19 @@ case ":$PATH:" in
 esac
 # pnpm end
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+# workspace
+export WORKSPACE_HOME='/home/khoanguyen/Documents/Workspace/env'
+
+# flutter
+export PATH="$PATH:$WORKSPACE_HOME/flutter/bin"
+export CHROME_EXECUTABLE="/snap/bin/brave"
+
+# android
+export ANDROID_HOME="$WORKSPACE_HOME/android"
+export ANDROID_SDK="$ANDROID_HOME/sdk"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools"
+
+# java
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+export PATH="$PATH:$JAVA_HOME/bin"
