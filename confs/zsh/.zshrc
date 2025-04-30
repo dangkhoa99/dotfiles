@@ -65,8 +65,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-source ~/.zsh_alias
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -106,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Config for node
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -116,7 +114,7 @@ eval "$(starship init zsh)"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
 # pnpm
-export PNPM_HOME="/home/khoanguyen/.local/share/pnpm"
+export PNPM_HOME="/home/khoa/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -125,14 +123,14 @@ esac
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # workspace
-export WORKSPACE_HOME='/home/khoanguyen/Documents/Workspace/env'
+export WORKSPACE_ENV='/home/khoa/Documents/workspace/env'
 
 # flutter
-export PATH="$PATH:$WORKSPACE_HOME/flutter/bin"
+export PATH="$PATH:$WORKSPACE_ENV/flutter/bin"
 export CHROME_EXECUTABLE="/snap/bin/brave"
 
 # android
-export ANDROID_HOME="$WORKSPACE_HOME/android"
+export ANDROID_HOME="$WORKSPACE_ENV/android"
 export ANDROID_SDK="$ANDROID_HOME/sdk"
 export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools"
 

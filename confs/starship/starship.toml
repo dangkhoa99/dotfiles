@@ -3,7 +3,7 @@
 add_newline = true
 
 [character]
-success_symbol = "[](bold green)"
+success_symbol = "[➜](bold green)"
 error_symbol = "[✗](bold red)"
 
 [package]
@@ -13,6 +13,6 @@ disabled = true
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = " "
 style = "fg:#6cc24a"
 format = "via [$symbol($version )]($style)"
