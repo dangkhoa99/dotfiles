@@ -1,102 +1,71 @@
+# =============================================================================
+# Alacritty Configuration — Khoa Nguyen
+# Docs: https://alacritty.org/config-alacritty.html
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# General
+# -----------------------------------------------------------------------------
+[general]
+# Reload config on save without restarting
+live_config_reload = true
+
+[env]
+# Stable true-color detection across apps / SSH
+TERM = "xterm-256color"
+
+# -----------------------------------------------------------------------------
+# Font
+# -----------------------------------------------------------------------------
+
 [font]
-size = 8.0
+# Font size in points
+size = 9.0
 
-[font.bold]
-family = "Jetbrains Mono"
-style = "Bold"
-
-[font.bold_italic]
-family = "Jetbrains Mono"
-style = "Bold Italic"
-
-[font.italic]
-family = "Jetbrains Mono"
-style = "Italic"
+# Use built-in box/block drawing characters for perfect alignment
+builtin_box_drawing = true
 
 [font.normal]
-family = "Jetbrains Mono"
+family = "UbuntuMono Nerd Font Mono"
 style = "Regular"
+
+[font.bold]
+style = "Bold"
+
+[font.italic]
+style = "Italic"
+
+[font.bold_italic]
+style = "Bold Italic"
 
 [font.offset]
 x = 0
 y = 0
 
-[colors.primary]
-
-background = "#282A36"
-foreground = "#F8F8F2"
-bright_foreground = "#FFFFFF"
-
-[colors.cursor]
-
-text = "#282A36"
-cursor = "#F8F8F2"
-
-[colors.vi_mode_cursor]
-
-text = "CellBackground"
-cursor = "CellForeground"
-
-[colors.selection]
-
-text = "CellForeground"
-background = "#44475a"
-
-[colors.normal]
-
-black = "#21222c"
-red = "#ff5555"
-green = "#50fa7b"
-yellow = "#f1fa8c"
-blue = "#bd93f9"
-magenta = "#ff79c6"
-cyan = "#8be9fd"
-white = "#f8f8f2"
-
-[colors.bright]
-
-black = "#6272a4"
-red = "#ff6e6e"
-green = "#69ff94"
-yellow = "#ffffa5"
-blue = "#d6acff"
-magenta = "#ff92df"
-cyan = "#a4ffff"
-white = "#ffffff"
-
-[colors.search.matches]
-
-foreground = "#44475a"
-background = "#50fa7b"
-
-[colors.search.focused_match]
-
-foreground = "#44475a"
-background = "#ffb86c"
-
-[colors.footer_bar]
-
-background = "#282a36"
-foreground = "#f8f8f2"
-
-[colors.hints.start]
-
-foreground = "#282a36"
-background = "#f1fa8c"
-
-[colors.hints.end]
-
-foreground = "#f1fa8c"
-background = "#282a36"
+# -----------------------------------------------------------------------------
+# Scrolling
+# -----------------------------------------------------------------------------
 
 [scrolling]
+# Max lines stored in scrollback buffer (0 to disable, max 100000)
 history = 10000
 
+# Lines scrolled per scroll event (default 3)
+multiplier = 4
+
+# -----------------------------------------------------------------------------
+# Window
+# -----------------------------------------------------------------------------
+
 [window]
+title = "Khoa Nguyen"
+opacity = 1.0
 dynamic_padding = false
 dynamic_title = true
-opacity = 0.95
-title = "dangkhoa99"
+resize_increments = false
+decorations = "Full"
+decorations_theme_variant = "Dark"
+startup_mode = "Windowed"
 
 [window.class]
 general = "Alacritty"
@@ -109,3 +78,118 @@ y = 4
 [window.dimensions]
 columns = 80
 lines = 30
+
+# -----------------------------------------------------------------------------
+# Mouse
+# -----------------------------------------------------------------------------
+[mouse]
+# Hide mouse cursor while typing
+hide_when_typing = false
+
+# -----------------------------------------------------------------------------
+# Keyboard Bindings
+# -----------------------------------------------------------------------------
+
+[keyboard]
+bindings = [
+  # Open a new Alacritty window
+  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+
+  # Toggle vi mode for keyboard-driven navigation
+  { key = "V", mods = "Alt|Shift", action = "ToggleViMode" },
+]
+
+# -----------------------------------------------------------------------------
+# Cursor
+# -----------------------------------------------------------------------------
+
+[cursor.style]
+# Shape: "Block" | "Underline" | "Beam"
+shape = "Block"
+
+# Blinking: "Never" | "Off" | "On" | "Always"
+blinking = "Off"
+
+[cursor]
+# Show hollow cursor when window is unfocused
+unfocused_hollow = true
+
+# -----------------------------------------------------------------------------
+# Terminal
+# -----------------------------------------------------------------------------
+[terminal]
+# Clipboard access via OSC 52 escape sequence
+# "Disabled" | "OnlyCopy" | "OnlyPaste" | "CopyPaste"
+osc52 = "OnlyCopy"
+
+[terminal.shell]
+# Shell program (defaults to $SHELL or login shell from /etc/passwd)
+program = "/bin/zsh"
+args = ["-l"]
+
+# -----------------------------------------------------------------------------
+# Colors — Custom dark theme
+# -----------------------------------------------------------------------------
+
+[colors.primary]
+background = "#080808"
+foreground = "#EEE2DE"
+dim_foreground = "#797979"
+
+[colors.cursor]
+cursor = "#AF5F5F"
+text = "#080808"
+
+[colors.vi_mode_cursor]
+cursor = "#7DB9B6"
+text = "#080808"
+
+[colors.selection]
+text = "#EEE2DE"
+background = "#383838"
+
+[colors.search.matches]
+foreground = "#080808"
+background = "#D59572"
+
+[colors.search.focused_match]
+foreground = "#080808"
+background = "#EBC17A"
+
+[colors.hints.start]
+foreground = "#080808"
+background = "#EBC17A"
+
+[colors.hints.end]
+foreground = "#080808"
+background = "#7DB9B6"
+
+[colors.normal]
+black = "#080808"
+red = "#AF5F5F"
+green = "#87AFAF"
+yellow = "#EBC17A"
+blue = "#7EAAC7"
+magenta = "#924653"
+cyan = "#7DB9B6"
+white = "#EEE2DE"
+
+[colors.bright]
+black = "#797979"
+red = "#D68C8C"
+green = "#86D3CE"
+yellow = "#E5B567"
+blue = "#9CC4DC"
+magenta = "#C98AAE"
+cyan = "#A0D8E8"
+white = "#F7F7F7"
+
+[colors.dim]
+black = "#181818"
+red = "#74423F"
+green = "#5C8482"
+yellow = "#8B7653"
+blue = "#556B79"
+magenta = "#6E4962"
+cyan = "#5C8482"
+white = "#636363"

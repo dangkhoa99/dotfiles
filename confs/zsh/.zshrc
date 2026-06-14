@@ -102,6 +102,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias exp="xdg-open ."
+alias cdmt="cd ~/Documents/workspace/work/minimaltech"
+alias cdnx="cd ~/Documents/workspace/work/nexpando"
+alias cdva="cd ~/Documents/workspace/work/venizia-ai"
+alias cdvnpay="cd ~/Documents/workspace/work/vnpay"
 
 # Config for node
 export NVM_DIR="$HOME/.config/nvm"
@@ -123,17 +128,35 @@ esac
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # workspace
-export WORKSPACE_ENV='/home/khoa/Documents/workspace/env'
+export WORKSPACE_ENV='/home/khoanguyen/Documents/workspace/env'
 
 # flutter
-export PATH="$PATH:$WORKSPACE_ENV/flutter/bin"
-export CHROME_EXECUTABLE="/snap/bin/brave"
+export PATH="$WORKSPACE_ENV/flutter/bin:$PATH"
+export CHROME_EXECUTABLE="/usr/bin/microsoft-edge"
 
 # android
-export ANDROID_HOME="$WORKSPACE_ENV/android"
-export ANDROID_SDK="$ANDROID_HOME/sdk"
-export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools"
+export ANDROID_HOME="$WORKSPACE_ENV/android/sdk"
+# export ANDROID_SDK="$ANDROID_HOME/sdk"
+# export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools"
+export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 
-# java
-export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
-export PATH="$PATH:$JAVA_HOME/bin"
+# bun completions
+[ -s "/home/khoanguyen/.bun/_bun" ] && source "/home/khoanguyen/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+if [ -f "$HOME/snap/code/current/.local/share/bin/env" ]; then
+    . "$HOME/snap/code/current/.local/share/bin/env"
+fi
+
+# opencode
+export PATH=/home/khoanguyen/.opencode/bin:$PATH

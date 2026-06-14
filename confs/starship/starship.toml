@@ -16,3 +16,8 @@ symbol = " "
 symbol = " "
 style = "fg:#6cc24a"
 format = "via [$symbol($version )]($style)"
+
+[bun]
+symbol = " "
+style = "fg:#CCBEA7"
+format = "via [$symbol($version )]($style)"
